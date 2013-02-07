@@ -1,0 +1,125 @@
+<html>
+	
+
+<head>
+<meta http-equiv=Content-Type content="text/html; charset=us-ascii">
+<title>EE108B - Programming Assignment #1</title>
+</head>
+
+	
+
+<body bgcolor=white lang=EN-US link=blue vlink=blue style='tab-interval:.5in'>
+
+<div>
+
+<h1 align=center style='text-align:center'>EE108B - Programming Assignment #1</h1>
+
+<h2 align=center style='text-align:center'>Due: Tuesday, February 12, 2013 </h2>
+
+<h3>Goals:</h3>
+
+<p>This assignment is intended to familiarize you with the SPIM
+environment for later assignments and to test your understanding of pointer implementations
+and procedure call conventions. </p>
+
+<p>This assignment must be completed individually. You may discuss strategies with other students, but the code you submit should be your own.</p>
+
+<h3>Your task:</h3>
+
+<p>Implement mergesort using the MIPS instruction set outlined
+in the SPIM documentation and in lecture.</p>
+
+<p>Look at <a href="mergesort.c">mergesort.c</a> for a C version of the
+mergesort routine. Your job is to add the required assembly code to the
+skeleton file, <a href="mergesort.s">mergesort.s</a>, such that the assembly
+code has the same functionality as the C code. The whole assignment directory can also be copied
+to your local directory in corn machines using the following command. To access corn use: <code>ssh yoursunetid@corn.stanford.edu</code>
+</p>
+
+<p><code>cp -r /usr/class/ee108b/WWW/pas/pa1 .</code></p>
+
+<p>Comments within mergesort.s clearly specify the functionality that needs to
+be added.</p>
+
+<h3>Guidelines:</h3>
+
+<ul type=disc>
+ <li>Be sure to follow the procedure call convention detailed
+     in Appendix B.6. You may also find Appendix B.9 and B.10 very helpful. </li>
+ <li>Make sure that all function
+     arguments are passed according to the established convention!</li>
+ <li>Follow the register and
+     procedure call conventions (i.e., which registers are intended for what
+     use and the sequence of steps in a procedure call). Appendix B of the
+     textbook is a good reference in this respect. Compilers have to follow the
+     conventions so you should, too.</li>
+</ul>
+
+<h3>Hints:</h3>
+
+<ul type=disc>
+ <li>Be sure you have a good
+     understanding of how a procedure call works before you attempt to code. </li>
+ <li>The assignment is reasonably
+     straightforward and shouldn't take too much more than 80 or 90 lines of
+     assembly. If you have much more than that then maybe you should look at it
+     again. </li>
+</ul>
+
+<h3>Requirements:</h3>
+
+<ul type=disc>
+ <li>Write a <code>README</code> file containing your name, SUNet ID, and a brief description of anything interesting about your implementation, if you feel it is necessary.</li>
+ <li>By 11:59 PM of the due date,
+     you should submit a zip archive containing both your <code>mergesort.s</code> and <code>README</code> to the dropbox on CCNet.
+     </li>
+ <li>The TAs will be testing your code using the SPIM installation that runs on the <b>corn</b> machines. SPIM is available from apt-get and from MacPorts, so feel free to download it and implement your solution on your own computer, but remember that it is <b>your</b> responsibility to make sure that your code runs correctly on the corn machines. </li>
+ <li>Add code to your local copy of mergesort.s, but do not change any of the original mergesort.s code, which controls the input prompts and printing the output. If
+     you think there's a bug, please email the TAs.
+     </li>
+ <li>We should be able to run your
+     program with the command:</li>
+</ul>
+
+<p style='margin-left:.5in'><code>spim -file mergesort.s &lt; inputfile</code></p>
+
+<p style='margin-left:.5in'>where <code>inputfile</code>
+is a text file containing integers separated by newlines. The first number in the file
+specifies the number of integers in the array to be sorted. The subsequent integers are the
+actual array elements. Included with the starter code is a script <a href="test.sh"><code>test.sh</code></a> which will diff the output of your mergesort.s with that of mergesort.c after compiling it with gcc. To use this test script, first enable execute permissions with: </p>
+
+<p style='margin-left:.5in'><code>chmod +x test.sh</code></p>
+
+<p style='margin-left:.5in'>(You should only need to enable execute permissions once.)</p>
+<p style='margin-left:.5in'>Then run the script using:</p>
+<p style='margin-left:.5in'><code>./test.sh inputfile</code></p>
+
+<p style='margin-left:.5in'>where <code>inputfile</code> is as described above. One test case input file <a href="sampleinput.txt"><code>sampleinput.txt</code></a> is provided for your convenience, but you should construct several of your own test cases.</p>
+
+<h3>Notes on Grading:</h3>
+
+<ul type=disc>
+ <li>We will be using an automatic script to grade your submission, so the format
+     of your output must exactly match that of the C program.
+     (Verify that the output of test.sh is empty for all valid input files.) </li>
+ <li>Coding efficiency will not be
+     graded (i.e., total number of instructions executed, instructions per loop,
+     efficient memory usage, etc.). All we are looking for is functionality.
+     However, you should implement your code the same way it is
+     implemented in the mergesort.c file; when there is a recursive
+     call, you should make a recursive call, when there is dynamically allocated
+     memory, you should dynamically allocate memory, etc. Also, use reasonable
+     formatting and white space in your code.</li>
+ <li>We will use several inputs in addition to the provided sample to grade your submission,
+     but they will all have the same format as the sample. We will not try to break your code with
+     ridiculous inputs, such as numbers which exceed the range of 32-bit integers or huge lists of numbers that could
+     cause your stack and heap to collide.</li>
+</ul>
+
+<p>Good luck and happy sorting!</p>
+
+</div>
+
+</body>
+
+</html>

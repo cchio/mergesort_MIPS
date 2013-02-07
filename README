@@ -1,0 +1,9 @@
+Chio, Clarence
+cchio@stanford.edu
+
+I implemented ArrCpy() as a leaf procedure with no frame to cut down on the number of loads, stores and stack shifts. Even though $fp was not used/changed, I chose to store and load it to follow the convention. All stack frames were 32bytes, even though I never use all space. I was following convention that stack space is usually allocated in multiples of 32-bytes. I do note that this will cause wastage (some degree of fragmentation) of stack space and might cause a stack overflow if the level of recursion goes too deep. However, I believe this is an extreme case and it is unnecessary to take this into account for this project.
+
+
+I tried to optimize as much of the arithmetic operations as possible, and optimize my code with constant folding, constant propagation, and smart allocation of pointers. Within a function, I tried not to reuse registers for multiple purposes, so I did not have to store values of registers unless it was demanded by convention (such as when I was using the saved registers).
+
+Hope you enjoy it! I'm excited about my first program written in MIPS assembly.
